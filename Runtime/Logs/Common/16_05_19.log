@@ -1,0 +1,18 @@
+[ 2016-05-19T15:35:33+08:00 ] ::1 /CMS/index.php/CMS/index.php/Home/Tea/course_stu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000386s ]
+ERR: 无法加载模块:CMS
+
+[ 2016-05-19T15:37:17+08:00 ] ::1 /CMS/index.php/CMS/index.php/Home/Tea/course_stu.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000276s ]
+ERR: 无法加载模块:CMS
+
+[ 2016-05-19T17:54:10+08:00 ] ::1 /CMS/index.php/CMS/index.php/Home/Tea/select_course.html.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000296s ]
+ERR: 无法加载模块:CMS
+

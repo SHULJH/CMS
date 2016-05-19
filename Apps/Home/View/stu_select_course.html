@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="__PUBLIC__/css/bootstrap.min.css">
+    <!-- 可选的Bootstrap主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="__PUBLIC__/css/bootstrap-theme.min.css">
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="__PUBLIC__/js/jquery-1.12.3.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="__PUBLIC__/js/bootstrap.min.js"></script>
+</head>
+<body>
+<form action="__URL__/select_course" method="post">
+    <select name="m_date" id="m_date">
+        <option>2012-2013冬季</option>
+        <option>2012-2013秋季</option>
+        <option>2013-2014冬季</option>
+        <option>2013-2014秋季</option>
+        <option>查看全部</option>
+    </select>
+    <button type="submit" class="btn">选择</button>
+</form>
+
+<h3>当前选择学期为:{$select_date}</h3>
+
+<table class="table">
+    <caption>选课列表，点开进入详细选课信息</caption>
+    <thead>
+    <tr>
+        <th>开课学期</th>
+        <th>开课编号</th>
+        <th>开课名称</th>
+        <th>开课时间</th>
+        <th>开课学分</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php
+                for($i=0; $i<$count; $i++){
+            ?>
+    <tr>
+        <td>{$result[$i]['xq']}</td>
+        <td>{$result[$i]['kh']}</td>
+        <td>{$result[$i]['km']}</td>
+        <td>{$result[$i]['sksj']}</td>
+        <td>{$result[$i]['xf']}</td>
+        <td><a href="{:U('course_info', array('m_xq'=>$result[$i]['xq'],
+        'm_kh'=>$result[$i]['kh'], 'm_gh'=>$result[$i]['gh']))}">课程详细</a></td>
+    </tr>
+    <?php
+                }
+            ?>
+    </tbody>
+</table>
+
+</body>
+</html>
