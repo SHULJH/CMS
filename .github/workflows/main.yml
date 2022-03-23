@@ -1,0 +1,39 @@
+name: Publish Maven
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish-saas-release:
+    if: ${{!contains(github.event.release.tag_name, 'SNAPSHOT') && !contains(github.event.release.tag_name, 'cdp')}}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Publish to Sonatype Maven Central - SaaS Release
+        run: echo "publish-saas-release"
+
+
+  publish-saas-snapshot:
+    if: ${{contains(github.event.release.tag_name, 'SNAPSHOT') && !contains(github.event.release.tag_name, 'cdp')}}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Publish to Sonatype Maven Central - Saas SNAPSHOT
+        run: echo "publish-saas-snapshot"
+
+
+  publish-cdp-release:
+    if: ${{!contains(github.event.release.tag_name, 'SNAPSHOT') && contains(github.event.release.tag_name, 'cdp')}}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Publish to Sonatype Maven Central - CDP Release
+        run: echo "publish-cdp-release"
+
+  publish-cdp-snapshot:
+    if: ${{contains(github.event.release.tag_name, 'SNAPSHOT') && contains(github.event.release.tag_name, 'cdp')}}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Publish to Sonatype Maven Central - CDP SNAPSHOT
+        run: echo "publish-cdp-snapshot"
